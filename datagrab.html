@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>main</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="../LZMA-JS/src/lzma.js"></script>
+    <script type="text/javascript" src="unxz.js"></script>
+</head>
+<body>
+
+<pre id="output"></pre>
+<div id="myOutput"> </div>
+
+<script>
+
+
+$(document).ready( function() {
+    var my_lzma = new LZMA("../LZMA-JS/src/lzma_worker.js");
+
+if (window.File && window.FileReader && window.FileList && window.Blob) {
+  // Great success! All the File APIs are supported.
+} else {
+  alert('The File APIs are not fully supported in this browser.');
+}
+
+var allText;
+
+
+
+var oReq = new XMLHttpRequest();
+var arrayString;
+oReq.open("GET", "1984.txt.xz", true);
+oReq.responseType = "arraybuffer";
+
+
+
+var uncompressed;
+
+var byteArray;
+oReq.onload = function (oEvent) {
+  var arrayBuffer = oReq.response; // Note: not oReq.responseText
+  if (arrayBuffer) {
+    byteArray = new Uint8Array(arrayBuffer);
+    var start = new Date().getMilliseconds();
+    uncompressed = Module.unxz(byteArray);
+    var end = new Date().getMilliseconds();
+    var time = end - start;
+    console.log(time+" milliseconds");
+    $("#output").html(uncompressed);
+
+  }
+}
+
+oReq.send(null);
+ });
+
+
+</script>
+</body>
+</html>
