@@ -5,12 +5,11 @@ var pageToRequest = "http://marcusklein.github.io/1984.txt";
 var http = require('http');
 http.createServer(function (req, res) {
   res.writeHead(200, {'Content-Type': 'text/plain'});
-  //res.end('Server is online, requesting page from ' + pageToRequest);
+  res.end('Server is online, requesting page from ' + pageToRequest);
 
 request.get( pageToRequest, function (error, response, body) {
     if (!error && response.statusCode == 200) {
         var text = body;
-        // Continue with your processing here.
         var fs = require('fs');
     fs.writeFile("textfiles/text" + count + ".txt", text, function(err) {
     if(err) {
@@ -28,9 +27,6 @@ request.get( pageToRequest, function (error, response, body) {
   exec("echo compressed the file", puts);
     }
 });
-  
-  var http = require('http'),
-    fs = require('fs');
   
 }).listen(1337, '0.0.0.0');
 
