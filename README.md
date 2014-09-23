@@ -1,7 +1,7 @@
 #ChocolatePizza
 
 ##Chocolate pizza is an application that uses xz file decompression to speed up webpage delivery.
-File decompressopn is handeled by a Javascript port of xz-embedded, with optional compression by a node.js server.
+File decompression is handled by a Javascript port of xz-embedded, with optional compression by a node.js server.
 
 Current live demo @ http://executable.co/ChocolatePizza/
 
@@ -17,6 +17,7 @@ Included is the compress.js server config file, just run on a node.js server to 
 Feel free to use this software as you wish.
 
 It is currently a work in progress by:
-https://github.com/rcar863 / 
-https://github.com/cgza / 
-https://github.com/marcusklein / 
+@rcar863 / 
+@cgza / 
+@marcusklein / 
+@Velitheda
