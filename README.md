@@ -19,10 +19,10 @@ Unxz.js is the .xz decompression library in javascript. This is a javscript port
 Unxz.js is fetched and ran in the browser with jquery. It gets the compressed .xz file from the nodejs server, then is decompressed *in the web browser*. Preliminary tests showed that the javascript decompresser ran just as well as the native xz-embedded. If this is developed further we can cut *30%* off web page loading times.
 
 #Pretty visualizations
-http://i.imgur.com/B9tAxow.png
-http://i.imgur.com/jI57OOT.png
-http://i.imgur.com/oe7fNA2.png
-http://i.imgur.com/5la63sb.png
+![](http://i.imgur.com/B9tAxow.png)
+![](http://i.imgur.com/jI57OOT.png)
+![](http://i.imgur.com/oe7fNA2.png)
+![](http://i.imgur.com/5la63sb.png)
 
 #Usage:
 
